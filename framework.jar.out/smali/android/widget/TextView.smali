@@ -22421,6 +22421,23 @@
     .param p1, "layoutDirection"    # I
 
     .prologue
+    invoke-super {p0, p1}, Landroid/view/View;->onRtlPropertiesChanged(I)V
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getTextDirectionHeuristic()Landroid/text/TextDirectionHeuristic;
+
+    move-result-object v0
+
+    iput-object v0, p0, Landroid/widget/TextView;->mTextDir:Landroid/text/TextDirectionHeuristic;
+
+    return-void
+.end method
+
+
+.method public onRtlPropertiesChangedori(I)V
+    .locals 1
+    .param p1, "layoutDirection"    # I
+
+    .prologue
     .line 8667
     invoke-super {p0, p1}, Landroid/view/View;->onRtlPropertiesChanged(I)V
 
@@ -25543,6 +25560,46 @@
     return-void
 .end method
 
+ .method public setCursorDrawableRes(I)V
+     .locals 3
+     .param p1, "cursorDrawableRes"    # I
+
+     .prologue
+     iput p1, p0, Landroid/widget/TextView;->mCursorDrawableRes:I
+ 
+     const/4 v0, 0x0
+ 
+     .local v0, "i":I
+     :goto_0
+     iget-object v1, p0, Landroid/widget/TextView;->mEditor:Landroid/widget/Editor;
+ 
+    iget v1, v1, Landroid/widget/Editor;->mCursorCount:I
+ 
+     if-ge v0, v1, :cond_0
+ 
+     iget-object v1, p0, Landroid/widget/TextView;->mEditor:Landroid/widget/Editor;
+
+     iget-object v1, v1, Landroid/widget/Editor;->mCursorDrawable:[Landroid/graphics/drawable/Drawable;
+ 
+     const/4 v2, 0x0
+ 
+     aput-object v2, v1, v0
+ 
+     add-int/lit8 v0, v0, 0x1
+ 
+     goto :goto_0
+ 
+     :cond_0
+     iget-object v1, p0, Landroid/widget/TextView;->mEditor:Landroid/widget/Editor;
+ 
+     const/4 v2, 0x0
+ 
+     iput v2, v1, Landroid/widget/Editor;->mCursorCount:I
+ 
+     return-void
+ .end method
+
+
 .method protected setCursorPosition_internal(II)V
     .locals 1
     .param p1, "start"    # I
@@ -28580,6 +28637,14 @@
     .param p1, "tf"    # Landroid/graphics/Typeface;
 
     .prologue
+     invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
+ 
+     move-result-object v0
+ 
+     invoke-static {v0, p1}, Lmiui/util/TypefaceUtils;->replaceTypeface(Landroid/content/Context;Landroid/graphics/Typeface;)Landroid/graphics/Typeface;
+ 
+     move-result-object p1
+
     .line 2589
     iget-object v0, p0, Landroid/widget/TextView;->mTextPaint:Landroid/text/TextPaint;
 
@@ -28637,6 +28702,10 @@
     .line 1432
     :goto_0
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getTypeface()Landroid/graphics/Typeface;
+
+    move-result-object p1
 
     .line 1434
     if-eqz p1, :cond_2
