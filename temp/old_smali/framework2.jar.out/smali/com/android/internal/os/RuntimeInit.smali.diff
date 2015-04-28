@@ -1,0 +1,19 @@
+*** ./smali/com/android/internal/os/RuntimeInit.smali	Tue Apr 28 13:26:21 2015
+--- /home/builder/patchrom-v6/d855/temp/new_smali/framework2.jar.out/./smali/com/android/internal/os/RuntimeInit.smali	Tue Apr 28 13:34:17 2015
+***************
+*** 167,173 ****
+  
+      invoke-direct {v2}, Lcom/android/internal/logging/AndroidConfig;-><init>()V
+  
+!     invoke-static {}, Lcom/android/internal/os/RuntimeInit;->getDefaultUserAgent()Ljava/lang/String;
+  
+      move-result-object v1
+  
+--- 167,173 ----
+  
+      invoke-direct {v2}, Lcom/android/internal/logging/AndroidConfig;-><init>()V
+  
+!     invoke-static {}, Landroid/miui/HttpClientUtils;->getDefaultUserAgent()Ljava/lang/String;
+  
+      move-result-object v1
+  

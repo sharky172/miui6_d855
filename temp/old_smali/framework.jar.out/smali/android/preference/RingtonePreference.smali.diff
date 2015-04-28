@@ -1,0 +1,17 @@
+*** ./smali/android/preference/RingtonePreference.smali	Tue Apr 28 13:28:13 2015
+--- /home/builder/patchrom-v6/d855/temp/new_smali/framework.jar.out/./smali/android/preference/RingtonePreference.smali	Tue Apr 28 13:36:18 2015
+***************
+*** 311,316 ****
+--- 311,322 ----
+  
+      invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->putExtra(Ljava/lang/String;Ljava/lang/CharSequence;)Landroid/content/Intent;
+  
++     const-string v0, "com.android.thememanager"
++ 
++     const-string v1, "com.android.thememanager.activity.ThemeTabActivity"
++ 
++     invoke-virtual {p1, v0, v1}, Landroid/content/Intent;->setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
++ 
+      return-void
+  .end method
+  

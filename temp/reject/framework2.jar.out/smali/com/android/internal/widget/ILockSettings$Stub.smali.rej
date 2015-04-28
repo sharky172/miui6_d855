@@ -1,0 +1,18 @@
+*** ILockSettings$Stub.smali	Tue Apr 28 13:26:18 2015
+--- ILockSettings$Stub.smali	Tue Apr 28 13:34:13 2015
+***************
+*** 589,594 ****
+          0xb -> :sswitch_b
+          0xc -> :sswitch_c
+          0xd -> :sswitch_d
+          0x5f4e5446 -> :sswitch_0
+      .end sparse-switch
+  .end method
+--- 612,618 ----
+          0xb -> :sswitch_b
+          0xc -> :sswitch_c
+          0xd -> :sswitch_d
++         0xe -> :sswitch_miui_0
+          0x5f4e5446 -> :sswitch_0
+      .end sparse-switch
+  .end method

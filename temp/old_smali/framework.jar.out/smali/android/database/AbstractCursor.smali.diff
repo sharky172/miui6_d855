@@ -1,0 +1,13 @@
+*** ./smali/android/database/AbstractCursor.smali	Tue Apr 28 13:28:46 2015
+--- /home/builder/patchrom-v6/d855/temp/new_smali/framework.jar.out/./smali/android/database/AbstractCursor.smali	Tue Apr 28 13:36:52 2015
+***************
+*** 781,786 ****
+--- 781,788 ----
+  
+      const/4 v3, -0x1
+  
++     invoke-static {p0, p1}, Landroid/database/AbstractCursorInjector;->before_moveToPosition(Landroid/database/AbstractCursor;I)V
++ 
+      invoke-virtual {p0}, Landroid/database/AbstractCursor;->getCount()I
+  
+      move-result v0

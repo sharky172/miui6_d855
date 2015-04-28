@@ -1,0 +1,14 @@
+*** ./smali/com/android/internal/telephony/Phone.smali	Tue Apr 28 13:26:35 2015
+--- /home/builder/patchrom-v6/d855/temp/new_smali/telephony-common.jar.out/./smali/com/android/internal/telephony/Phone.smali	Tue Apr 28 13:34:32 2015
+***************
+*** 376,381 ****
+--- 376,384 ----
+  .method public abstract getMessageWaitingIndicator()Z
+  .end method
+  
++ .method public abstract getMiuiIccPhoneBookInterfaceManager()Lcom/android/internal/telephony/MiuiIccPhoneBookInterfaceManager;
++ .end method
++ 
+  .method public abstract getMsisdn()Ljava/lang/String;
+  .end method
+  

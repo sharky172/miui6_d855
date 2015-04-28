@@ -1,0 +1,21 @@
+*** ./smali/android/telephony/SmsManager.smali	Tue Apr 28 13:26:39 2015
+--- /home/builder/patchrom-v6/d855/temp/new_smali/telephony-common.jar.out/./smali/android/telephony/SmsManager.smali	Tue Apr 28 13:34:36 2015
+***************
+*** 189,194 ****
+--- 189,204 ----
+      return-object v0
+  .end method
+  
++ .method public static getDefault(I)Landroid/telephony/SmsManager;
++     .locals 1
++     .param p0, "slotId"    # I
++ 
++     .prologue
++     sget-object v0, Landroid/telephony/SmsManager;->sInstance:Landroid/telephony/SmsManager;
++ 
++     return-object v0
++ .end method
++ 
+  
+  # virtual methods
+  .method public copyMessageToIcc([B[BI)Z

@@ -1,0 +1,19 @@
+*** ./smali/com/android/internal/telephony/TelephonyCapabilities.smali	Tue Apr 28 13:26:35 2015
+--- /home/builder/patchrom-v6/d855/temp/new_smali/telephony-common.jar.out/./smali/com/android/internal/telephony/TelephonyCapabilities.smali	Tue Apr 28 13:34:32 2015
+***************
+*** 8,14 ****
+  
+  
+  # direct methods
+! .method private constructor <init>()V
+      .locals 0
+  
+      .prologue
+--- 8,14 ----
+  
+  
+  # direct methods
+! .method public constructor <init>()V
+      .locals 0
+  
+      .prologue

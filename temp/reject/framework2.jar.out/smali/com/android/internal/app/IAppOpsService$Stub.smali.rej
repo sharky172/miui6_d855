@@ -1,0 +1,19 @@
+*** IAppOpsService$Stub.smali	Tue Apr 28 13:26:16 2015
+--- IAppOpsService$Stub.smali	Tue Apr 28 13:34:11 2015
+***************
+*** 574,579 ****
+          0xa -> :sswitch_a
+          0xb -> :sswitch_b
+          0xc -> :sswitch_c
+          0x5f4e5446 -> :sswitch_0
+      .end sparse-switch
+  .end method
+--- 632,639 ----
+          0xa -> :sswitch_a
+          0xb -> :sswitch_b
+          0xc -> :sswitch_c
++         0xd -> :sswitch_d
++         0xe -> :sswitch_e
+          0x5f4e5446 -> :sswitch_0
+      .end sparse-switch
+  .end method

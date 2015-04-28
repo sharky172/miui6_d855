@@ -1,0 +1,15 @@
+*** ./smali/android/app/DialogFragment.smali	Tue Apr 28 13:27:57 2015
+--- /home/builder/patchrom-v6/d855/temp/new_smali/framework.jar.out/./smali/android/app/DialogFragment.smali	Tue Apr 28 13:36:00 2015
+***************
+*** 421,426 ****
+--- 421,430 ----
+      return-void
+  
+      :cond_1
++     iget-object v2, p0, Landroid/app/DialogFragment;->mDialog:Landroid/app/Dialog;
++ 
++     if-eqz v2, :cond_0
++ 
+      invoke-virtual {p0}, Landroid/app/DialogFragment;->getView()Landroid/view/View;
+  
+      move-result-object v1

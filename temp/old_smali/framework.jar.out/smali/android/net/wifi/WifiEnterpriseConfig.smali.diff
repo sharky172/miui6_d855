@@ -1,0 +1,13 @@
+*** ./smali/android/net/wifi/WifiEnterpriseConfig.smali	Tue Apr 28 13:27:44 2015
+--- /home/builder/patchrom-v6/d855/temp/new_smali/framework.jar.out/./smali/android/net/wifi/WifiEnterpriseConfig.smali	Tue Apr 28 13:35:47 2015
+***************
+*** 1933,1938 ****
+--- 1933,1940 ----
+          :pswitch_0
+          :pswitch_0
+          :pswitch_0
++         :pswitch_0
++         :pswitch_0
+      .end packed-switch
+  .end method
+  

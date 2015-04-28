@@ -1,0 +1,27 @@
+*** ./smali/android/widget/Toast.smali	Tue Apr 28 13:28:03 2015
+--- /home/builder/patchrom-v6/d855/temp/new_smali/framework.jar.out/./smali/android/widget/Toast.smali	Tue Apr 28 13:36:07 2015
+***************
+*** 405,410 ****
+--- 405,426 ----
+      return-void
+  .end method
+  
++ .method public setType(I)V
++     .locals 1
++     .param p1, "type"    # I
++ 
++     .prologue
++     iget-object v0, p0, Landroid/widget/Toast;->mTN:Landroid/widget/Toast$TN;
++ 
++     invoke-virtual {v0}, Landroid/widget/Toast$TN;->getParams()Landroid/view/WindowManager$LayoutParams;
++ 
++     move-result-object v0
++ 
++     iput p1, v0, Landroid/view/WindowManager$LayoutParams;->type:I
++ 
++     return-void
++ .end method
++ 
+  .method public setView(Landroid/view/View;)V
+      .locals 0
+      .param p1, "view"    # Landroid/view/View;
