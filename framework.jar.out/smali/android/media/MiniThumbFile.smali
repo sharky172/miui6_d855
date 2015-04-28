@@ -1486,11 +1486,11 @@
     .line 319
     iget-object v0, p0, Landroid/media/MiniThumbFile;->mBuffer:Ljava/nio/ByteBuffer;
 
-    invoke-virtual {v0}, Ljava/nio/ByteBuffer;->get()B
+    invoke-static {v0, p1, p2}, Landroid/media/MiniThumbFile$Injector;->isMatch(Ljava/nio/ByteBuffer;J)Z
 
     move-result v0
 
-    if-ne v0, v11, :cond_2
+    if-eqz v0, :cond_2
 
     .line 320
     iget-object v0, p0, Landroid/media/MiniThumbFile;->mBuffer:Ljava/nio/ByteBuffer;
@@ -1746,7 +1746,11 @@
     :cond_2
     const-wide/16 v6, 0x2710
 
-    mul-long/2addr v4, v6
+    mul-long/2addr v4, p1, v6
+
+    invoke-static/range {p1 .. p2}, Landroid/media/MiniThumbFile$Injector;->getPosition(J)J
+ 
+    move-result-wide v4
 
     .line 402
     const/4 v12, 0x0
@@ -1788,7 +1792,7 @@
 
     .line 407
     .local v16, "size":I
-    const/16 v3, 0xd
+    const/16 v3, 0x15
 
     move/from16 v0, v16
 
@@ -1820,6 +1824,12 @@
 
     invoke-virtual {v3}, Ljava/nio/ByteBuffer;->getLong()J
 
+     move-object/from16 v0, p0
+ 
+     iget-object v3, v0, Landroid/media/MiniThumbFile;->mBuffer:Ljava/nio/ByteBuffer;
+ 
+     invoke-virtual {v3}, Ljava/nio/ByteBuffer;->getLong()J
+ 
     move-result-wide v13
 
     .line 411
@@ -1834,7 +1844,7 @@
 
     .line 413
     .local v11, "length":I
-    add-int/lit8 v3, v11, 0xd
+    add-int/lit8 v3, v11, 0x15
 
     move/from16 v0, v16
 
