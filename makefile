@@ -20,14 +20,11 @@ local-modified-jars :=
 # All apks from MIUI
 local-miui-removed-apps := 
 
-local-miui-modified-apps := MiuiFramework 
+local-miui-modified-apps :=  
 
-local-phone-apps := Camera2 Bluetooth HTMLViewer KeyChain LatinIME NfcNci PacProcessor \
-        UserDictionaryProvider WAPPushManager
+local-phone-apps := 
 
-local-phone-priv-apps := BackupRestoreConfirmation DefaultContainerService FusedLocation \
-        ExternalStorageProvider InputDevices OneTimeInitializer ProxyHandler SharedStorageBackup \
-        Shell Tag VpnDialogs
+local-phone-priv-apps := 
 
 local-density := XXHDPI
 
