@@ -1,23 +1,6 @@
 *** ResourcesManager.smali	Tue Apr 28 13:27:59 2015
 --- ResourcesManager.smali	Tue Apr 28 13:36:02 2015
 ***************
-*** 215,220 ****
-      or-int/lit16 v0, v0, 0xd00
-  
-      :cond_3
-      iget-object v10, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
-  
-      if-eqz v10, :cond_4
---- 215,222 ----
-      or-int/lit16 v0, v0, 0xd00
-  
-      :cond_3
-+     invoke-static {v0, p1}, Landroid/app/MiuiThemeHelper;->handleExtraConfigurationChanges(ILandroid/content/res/Configuration;)V
-+ 
-      iget-object v10, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
-  
-      if-eqz v10, :cond_4
-***************
 *** 772,785 ****
   
       :cond_5

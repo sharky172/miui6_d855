@@ -1624,6 +1624,9 @@
 
     .line 395
     :cond_4
+
+    invoke-static {v0, p1}, Landroid/app/MiuiThemeHelper;->handleExtraConfigurationChanges(ILandroid/content/res/Configuration;)V
+
     iget-object v12, p1, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
 
     if-eqz v12, :cond_5
