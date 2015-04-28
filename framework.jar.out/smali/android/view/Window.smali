@@ -1398,15 +1398,18 @@
 .end method
 
 .method public setFlags(II)V
-    .locals 4
+    .locals 5
     .param p1, "flags"    # I
     .param p2, "mask"    # I
 
     .prologue
+    const/high16 v3, 0x4000000
     .line 748
     and-int v1, p1, p2
 
     const/high16 v2, -0x80000000
+
+
 
     and-int/2addr v1, v2
 
