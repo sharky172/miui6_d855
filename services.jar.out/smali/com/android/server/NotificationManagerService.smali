@@ -6709,30 +6709,37 @@
 
     invoke-virtual {v6, p2, v8}, Lcom/android/server/NotificationManagerService$ToastRecord;->dump(Ljava/io/PrintWriter;Ljava/lang/String;)V
 
-    .line 2629
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_4
 
-    .line 2632
+    iget-object v5, p0, Lcom/android/server/NotificationManagerService;->mContext:Landroid/content/Context;
+
+    iget v6, p0, Lcom/android/server/NotificationManagerService;->mDefaultNotificationColor:I
+
+    invoke-static {v5, v3, v6}, Lcom/android/server/NotificationLightController;->updateNotificationLight(Landroid/content/Context;Landroid/app/Notification;I)V
+
+    iget v0, v3, Landroid/app/Notification;->ledARGB:I
+
+    iget v2, v3, Landroid/app/Notification;->ledOnMS:I
+
+    iget v1, v3, Landroid/app/Notification;->ledOffMS:I
+
     :cond_4
     const-string v6, "  "
 
     invoke-virtual {p2, v6}, Ljava/io/PrintWriter;->println(Ljava/lang/String;)V
 
-    .line 2634
     .end local v2    # "i":I
     :cond_5
     monitor-exit v7
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2636
     iget-object v7, p0, Lcom/android/server/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
     monitor-enter v7
 
-    .line 2637
     :try_start_1
     iget-object v6, p0, Lcom/android/server/NotificationManagerService;->mNotificationList:Ljava/util/ArrayList;
 
@@ -8996,4 +9003,14 @@
     invoke-virtual {v1, v2}, Landroid/content/Context;->unbindService(Landroid/content/ServiceConnection;)V
 
     goto :goto_0
+.end method
+
+.method static synthetic access_updateNotificationPulse(Lcom/android/server/NotificationManagerService;)V
+    .locals 0
+    .param p0, "x0"    # Lcom/android/server/NotificationManagerService;
+
+    .prologue
+    invoke-direct {p0}, Lcom/android/server/NotificationManagerService;->updateNotificationPulse()V
+
+    return-void
 .end method
