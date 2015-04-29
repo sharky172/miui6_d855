@@ -21993,7 +21993,20 @@
     .line 4614
     and-int/lit8 v3, p2, 0x40
 
+     if-eqz v3, :cond_miui_0
+ 
+     move/from16 v0, p3
+ 
+     and-int/lit16 v3, v0, 0x100
+
     if-nez v3, :cond_e
+
+     :try_start_2
+     sget-boolean v3, Landroid/os/Build;->IS_DEBUGGABLE:Z
+ 
+     if-eqz v3, :cond_b
+ 
+     :cond_miui_0
 
     .line 4620
     const/4 v3, 0x0

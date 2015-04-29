@@ -19,9 +19,9 @@
 
 .field final synthetic val$context:Landroid/content/Context;
 
-.field final synthetic val$intent:Landroid/content/Intent
+.field final synthetic val$intent:Landroid/content/Intent;
 
-.field final synthetic val$wipeMedia:Z
+.field final synthetic val$wipeMedia:Z;
 
 
 # direct methods
