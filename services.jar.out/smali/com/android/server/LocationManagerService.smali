@@ -5963,7 +5963,7 @@
     .line 1059
     iget-object v2, p0, Lcom/android/server/LocationManagerService;->mAppOps:Landroid/app/AppOpsManager;
 
-    invoke-virtual {v2, v1, p1, p2}, Landroid/app/AppOpsManager;->checkOp(IILjava/lang/String;)I
+    invoke-virtual {v2, v1, p1, p2}, Landroid/app/AppOpsManager;->noteOpNoThrow(IILjava/lang/String;)I
 
     move-result v0
 
@@ -9425,6 +9425,10 @@
 
     invoke-virtual {p0, v5, v0, v9}, Lcom/android/server/LocationManagerService;->checkLocationAccess(ILjava/lang/String;I)Z
 
+    move-result v1
+
+    if-eqz v1, :cond_4
+
     .line 1495
     iget-object v13, p0, Lcom/android/server/LocationManagerService;->mLock:Ljava/lang/Object;
 
@@ -9466,6 +9470,7 @@
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
     .line 1504
+    :cond_4
     invoke-static {v10, v11}, Landroid/os/Binder;->restoreCallingIdentity(J)V
 
     .line 1506
