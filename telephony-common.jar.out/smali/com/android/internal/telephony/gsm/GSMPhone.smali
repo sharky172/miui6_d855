@@ -3456,6 +3456,7 @@
     .end packed-switch
 .end method
 
+
 .method public handleMessage(Landroid/os/Message;)V
     .locals 16
     .param p1, "msg"    # Landroid/os/Message;
@@ -3513,14 +3514,10 @@
 
     invoke-static {v13, v14}, Landroid/telephony/Rlog;->e(Ljava/lang/String;Ljava/lang/String;)I
 
-    return-void
-
     .line 1541
     :cond_0
     :goto_0
     :sswitch_0
-    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/gsm/GSMPhone;->checkAndNotifyDeviceId(Landroid/os/Message;)V
-
     return-void
 
     .line 1344
