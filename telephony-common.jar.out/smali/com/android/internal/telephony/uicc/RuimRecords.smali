@@ -768,6 +768,7 @@
     iput v0, p0, Lcom/android/internal/telephony/uicc/RuimRecords;->mRecordsToLoad:I
 
     iget-object v0, p0, Lcom/android/internal/telephony/uicc/RuimRecords;->mFh:Lcom/android/internal/telephony/uicc/IccFileHandler;
+
     const/16 v1, 0x6f3a
 
     new-instance v2, Lcom/android/internal/telephony/uicc/RuimRecords$EfCsimLiLoaded;
@@ -819,7 +820,8 @@
     move-result-object v2
 
     invoke-virtual {v0, v1, v3, v2}, Lcom/android/internal/telephony/uicc/IccFileHandler;->loadEFLinearFixed(IILandroid/os/Message;)V
-Lcom/android/internal/telephony/uicc/RuimRecords;->mRecordsToLoad:I
+
+    iget v0, p0, Lcom/android/internal/telephony/uicc/RuimRecords;->mRecordsToLoad:I
 
     add-int/lit8 v0, v0, 0x1
 
@@ -878,6 +880,7 @@ Lcom/android/internal/telephony/uicc/RuimRecords;->mRecordsToLoad:I
     invoke-virtual {p0, v4, v3}, Lcom/android/internal/telephony/uicc/RuimRecords;->obtainMessage(ILjava/lang/Object;)Landroid/os/Message;
 
     move-result-object v3
+
     invoke-virtual {v0, v1, v2, v3}, Lcom/android/internal/telephony/uicc/IccFileHandler;->loadEFTransparent(IILandroid/os/Message;)V
 
     iget v0, p0, Lcom/android/internal/telephony/uicc/RuimRecords;->mRecordsToLoad:I
