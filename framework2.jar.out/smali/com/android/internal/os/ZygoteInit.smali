@@ -1624,7 +1624,6 @@
     .prologue
     .line 341
     invoke-static {}, Ldalvik/system/VMRuntime;->getRuntime()Ldalvik/system/VMRuntime;
-:
 
     move-result-object v1
 
